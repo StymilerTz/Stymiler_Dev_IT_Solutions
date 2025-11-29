@@ -6,24 +6,29 @@ body {background:#0d0d0d; color:#fff; line-height:1.5;}
 .logo {font-weight:700; font-size:20px; color:#00eaff;}
 .nav a {margin-left:15px; text-decoration:none; color:#fff; transition:.3s;}
 .nav a:hover {color:#00eaff;}
-.btn {padding:8px 15px; background:#00eaff; color:#000; border-radius:8px; display:flex; align-items:center; gap:5px;}
+.btn {padding:8px 15px; background:#00eaff; color:#000; border-radius:8px; display:flex; align-items:center; gap:5px; transition:0.3s;}
+.btn:hover {transform:scale(1.05);}
 
 /* HERO */
 .hero {text-align:center; padding:80px 20px;}
-.hero h1 {font-size:36px; margin-bottom:10px;}
-.hero h2 {font-size:22px; font-weight:400; margin-bottom:15px;}
-.hero p {opacity:.85; margin-bottom:20px;}
-.cta {padding:12px 25px; background:#00eaff; color:#000; border-radius:10px; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:5px;}
+.hero h1 {font-size:36px; margin-bottom:10px; opacity:0; transform:translateY(-20px); transition:all 0.7s ease;}
+.hero h2 {font-size:22px; font-weight:400; margin-bottom:15px; opacity:0; transform:translateY(-20px); transition:all 0.9s ease;}
+.hero p {opacity:0.85; margin-bottom:20px; opacity:0; transform:translateY(-20px); transition:all 1.1s ease;}
+.cta {padding:12px 25px; background:#00eaff; color:#000; border-radius:10px; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:5px; opacity:0; transform:translateY(-20px); transition:all 1.3s ease;}
+.fade-in.in-view {opacity:1; transform:translateY(0);}
+.fade-in-delay.in-view {opacity:1; transform:translateY(0);}
 
 /* SECTIONS */
 .section {padding:60px 20px; text-align:center;}
 .cards {display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:30px;}
-.card {width:280px; padding:20px; border-radius:15px; background:rgba(255,255,255,0.05); box-shadow:0 0 15px rgba(0,234,255,0.3); transition:.3s;}
-.card:hover {transform:translateY(-5px); box-shadow:0 0 25px rgba(0,234,255,0.5);}
+.card {width:280px; padding:20px; border-radius:15px; background:rgba(255,255,255,0.05); box-shadow:0 0 15px rgba(0,234,255,0.3); transition:.3s; opacity:0; transform:translateY(20px);}
+.card:hover {transform:translateY(-5px) scale(1.05); box-shadow:0 0 25px rgba(0,234,255,0.5);}
 .card i {font-size:22px; color:#00eaff; margin-bottom:10px; display:block;}
+.animate-card.in-view {opacity:1; transform:translateY(0); transition:all 0.6s ease;}
 
 /* ABOUT */
-.toggle-btn {margin-top:15px; padding:10px 20px; border:none; border-radius:10px; background:#00eaff; color:#000; cursor:pointer;}
+.toggle-btn {margin-top:15px; padding:10px 20px; border:none; border-radius:10px; background:#00eaff; color:#000; cursor:pointer; transition:0.3s;}
+.toggle-btn:hover {transform:scale(1.05);}
 .more-about {display:none; margin-top:15px; text-align:left; padding:10px; background:rgba(255,255,255,0.03); border-radius:10px;}
 
 /* CONTACT CARDS MODERN */
@@ -34,7 +39,6 @@ body {background:#0d0d0d; color:#fff; line-height:1.5;}
   gap:20px;
   margin-top:30px;
 }
-
 .contact-card {
   display:flex;
   align-items:center;
@@ -46,15 +50,14 @@ body {background:#0d0d0d; color:#fff; line-height:1.5;}
   color:#fff;
   transition:0.3s;
   min-width:200px;
+  opacity:0; transform:translateY(20px);
 }
-
 .contact-card:hover {
   background:#00eaff;
   color:#000;
-  transform:translateY(-5px);
+  transform:translateY(-5px) scale(1.05);
   box-shadow:0 0 20px #00eaff;
 }
-
 .contact-card .icon {
   background: rgba(0,234,255,0.2);
   padding:12px;
@@ -65,45 +68,11 @@ body {background:#0d0d0d; color:#fff; line-height:1.5;}
   font-size:20px;
   transition:0.3s;
 }
-
 .contact-card:hover .icon {
   background:#000;
   color:#00eaff;
 }
-
 .contact-card span {font-weight:500;}
-
-/* VISITOR COUNTER ANIMATED */
-.visitor-counter {
-  margin-top:30px;
-  padding:15px 25px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  background: rgba(0,234,255,0.1);
-  color:#00eaff;
-  border-radius:15px;
-  font-weight:700;
-  font-size:18px;
-  transition:0.3s;
-}
-
-.visitor-counter:hover {
-  background:#00eaff;
-  color:#000;
-  transform:translateY(-3px);
-  box-shadow:0 0 15px #00eaff;
-}
-
-.visitor-counter i {
-  animation: bounce 1.5s infinite;
-  color:#00eaff;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
 
 /* FOOTER */
 footer {text-align:center; padding:20px; margin-top:40px; background:rgba(255,255,255,0.05);}
