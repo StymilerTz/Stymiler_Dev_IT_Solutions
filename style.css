@@ -73,6 +73,27 @@ body {background:#0d0d0d; color:#fff; line-height:1.5;}
 
 .contact-card span {font-weight:500;}
 
+/* VISITOR COUNTER MODERN */
+.visitor-counter {
+  margin-top:30px;
+  padding:15px 20px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background: rgba(0,234,255,0.1);
+  color:#00eaff;
+  border-radius:12px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.visitor-counter:hover {
+  background:#00eaff;
+  color:#000;
+  transform:translateY(-3px);
+  box-shadow:0 0 15px #00eaff;
+}
+
 /* FOOTER */
 footer {text-align:center; padding:20px; margin-top:40px; background:rgba(255,255,255,0.05);}
 

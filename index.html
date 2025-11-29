@@ -72,6 +72,9 @@
 </section>
 
 <footer>
+  <div class="visitor-counter">
+    <i class="fas fa-users"></i> Visitors: <span id="visitor-count">0</span>
+  </div>
   <p>© 2025 Stymiler Dev & IT Solutions — All Rights Reserved</p>
 </footer>
 
@@ -84,6 +87,14 @@ function toggleAbout() {
     more.style.display = "block";
   }
 }
+
+// Visitor Counter using CountAPI
+fetch('https://api.countapi.xyz/hit/stymilertz.github.io/stymiler-website')
+.then(res => res.json())
+.then(data => {
+  document.getElementById('visitor-count').innerText = data.value;
+})
+.catch(err => console.log(err));
 </script>
 
 </body>
