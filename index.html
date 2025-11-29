@@ -88,11 +88,21 @@ function toggleAbout() {
   }
 }
 
-// Visitor Counter using CountAPI
+// Visitor Counter with animation
 fetch('https://api.countapi.xyz/hit/stymilertz.github.io/stymiler-website')
 .then(res => res.json())
 .then(data => {
-  document.getElementById('visitor-count').innerText = data.value;
+  const counter = document.getElementById('visitor-count');
+  counter.innerText = 0;
+  let value = 0;
+  const interval = setInterval(() => {
+    if(value < data.value){
+      value++;
+      counter.innerText = value;
+    } else {
+      clearInterval(interval);
+    }
+  }, 50); // speed of animation
 })
 .catch(err => console.log(err));
 </script>
